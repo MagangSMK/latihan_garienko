@@ -11,7 +11,7 @@ include_once("../../config/config.php");
 </head>
 <body>
 	<form action="add.php" method="post" name="form1">
-		<div class="bg-green-200 py-10 px-10 min-h-screen ">
+		<div class="bg-purple-400 py-10 px-10 min-h-screen ">
 			<!--   tip; mx-auto -- jagab ilusti keskele  -->
 			<div class="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">
 				<!--       flex - asjad korvuti, nb! flex-1 - element kogu ylejaanud laius -->
@@ -69,7 +69,9 @@ include_once("../../config/config.php");
             			data-mdb-ripple-color="light">
             			Go to homepage
           			</a>
+
 					<input name="Submit" type="submit" class="py-3 px-2 bg-gray-400 hover:bg-green-700 text-white font-bold" value="Tambah Cuti">
+					
 					<?php
 						// Check If form submitted, insert form data into users table.
 						if(isset($_POST['Submit'])) {

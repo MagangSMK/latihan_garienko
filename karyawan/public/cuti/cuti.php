@@ -86,7 +86,7 @@ include_once("../../config/config.php");
               <a class="nav-link text-white " href="../penggajian/penggajian.php">
   
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                  <i class="material-icons opacity-10">person</i>
+                  <i class="material-icons opacity-10">receipt_long</i>
                 </div>
   
                 <span class="nav-link-text ms-1">Tabel Penggajian</span>
@@ -97,7 +97,7 @@ include_once("../../config/config.php");
               <div class="mx-3">
                 <a class="btn bg-gradient-primary mt-4 w-100" href="../../login/logout.php" type="button">Log Out</a>
               </div>
-
+            </div>
           </ul>
         </div>
   
@@ -120,20 +120,20 @@ include_once("../../config/config.php");
       <form method="get">
         <label>Cari :</label>
         <input type="text" name="cari">
-        <input  
-            href="../public/cuti/add.php" 
-            type="submit" 
-            value="Cari" 
-            class="inline-block px-3 py-2 
-            bg-blue-600 
-            text-white uppercase rounded shadow-md 
-            hover:bg-blue-700 hover:shadow-lg 
-            focus:bg-blue-700 focus:shadow-lg 
-            focus:outline-none focus:ring-0 
-            active:bg-blue-800 active:shadow-lg"
-            data-mdb-ripple="true"
-            data-mdb-ripple-color="light"
-        >
+        <input 
+          href="../public/cuti/add.php" 
+          type="submit" 
+          value="Cari" 
+          class="inline-block px-3 py-2 
+          bg-blue-600 
+          text-white uppercase rounded shadow-md 
+          hover:bg-blue-700 hover:shadow-lg 
+          focus:bg-blue-700 focus:shadow-lg 
+          focus:outline-none focus:ring-0 
+          active:bg-blue-800 active:shadow-lg"
+          data-mdb-ripple="true"
+          data-mdb-ripple-color="light"
+          >
       </form>
       <?php
         if(isset($_GET['cari'])){
@@ -156,7 +156,7 @@ include_once("../../config/config.php");
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="bg-white border-b">  
+                      
                       <?php
                         if(isset($_GET['cari'])){
                           $cari = $_GET['cari'];
@@ -166,7 +166,7 @@ include_once("../../config/config.php");
                           $result1= mysqli_query($mysqli, "SELECT * FROM cuti order BY id asc");
                         }
                         while($user_data = mysqli_fetch_array($result1)) {
-                          echo "<tr>";
+                          echo "<tr class='bg-white border-b'>";
                           echo "<td class='px-1 py-1 whitespace-nowrap text-sm font-medium text-blue-900'>".$id = $user_data['id']."</td>";
 		                      echo "<td class='px-1 py-1 whitespace-nowrap text-sm font-medium text-gray-900'>".$karyawan_id =$user_data['karyawan_id']."</td>";
 		                      echo "<td class='px-1 py-1 whitespace-nowrap text-sm font-medium text-gray-900'>".$tanggal_cuti = $user_data['tanggal_cuti']."</td>";

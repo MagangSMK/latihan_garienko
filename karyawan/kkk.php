@@ -23,13 +23,14 @@
           <span class="ms-1 font-weight-bold text-white">Home Page</span>
         </a>
       </div>
-      <marquee class="bg-white" scrollamount="2"><h6 class="text-black" >Database Restoran</h6></marquee>
+      <marquee class="bg-white" scrollamount="2"><h6 class="text-black" >Database Karyawan</h6></marquee>
       <hr class="horizontal light mt-0 mb-2">
       <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
+
           <li class="nav-item">
             <a class="nav-link text-white " href="public/cuti/cuti.php" target="main1">
-              
+
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="material-icons opacity-10">dashboard</i>
               </div>
@@ -37,25 +38,48 @@
               <span class="nav-link-text ms-1">Tabel Cuti</span>
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link text-white " href="../menu/menu.php">
+            <a class="nav-link text-white " href="../golongan/golongan.php">
               <div class="text-white bg-green-800 text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="material-icons opacity-10">person</i>
               </div>
   
-              <span class="nav-link-text ms-1">Tabel Menu</span>
+              <span class="nav-link-text ms-1">Tabel golongan</span>
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link text-white " href="../transaksi/transaksi.php">
+            <a class="nav-link text-white " href="../karyawan/karyawan.php">
 
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="material-icons opacity-10">receipt_long</i>
               </div>
   
-              <span class="nav-link-text ms-1">Tabel Transaksi</span>
+              <span class="nav-link-text ms-1">Tabel karyawan</span>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white " href="../lembur/lembur.php">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">mantap</i>
+              </div>
+  
+              <span class="nav-link-text ms-1">Tabel Lembur</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link text-white " href="../penggajian/penggajian.php">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">receipt_long</i>
+              </div>
+  
+              <span class="nav-link-text ms-1">Tabel penggajian</span>
+            </a>
+          </li>
+
           <div class="sidenav-footer position-absolute w-100 bottom-0 ">
             <div class="mx-3">
               <a class="btn bg-gradient-primary mt-4 w-100" href="../../login/logout.php" type="button">Log Out</a>

@@ -87,7 +87,7 @@ include_once("../../config/config.php");
               <a class="nav-link text-white " href="../penggajian/penggajian.php">
 
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                  <i class="material-icons opacity-10">person</i>
+                  <i class="material-icons opacity-10">receipt_long</i>
                 </div>
 
                 <span class="nav-link-text ms-1">Tabel Penggajian</span>
@@ -167,7 +167,7 @@ include_once("../../config/config.php");
                         $result4= mysqli_query($mysqli, "SELECT * FROM lembur order BY id asc");
                       }
                       while($user_data = mysqli_fetch_array($result4)) {         
-                        echo "<tr>";
+                        echo "<tr class='bg-white border-b'>";
                         echo "<td class='px-1 py-1 whitespace-nowrap text-sm font-medium text-blue-900'>".$id = $user_data['id']."</td>";
 		                    echo "<td class='px-1 py-1 whitespace-nowrap text-sm font-medium text-gray-900'>".$karyawan_id = $user_data['karyawan_id']."</td>";
 		                    echo "<td class='px-1 py-1 whitespace-nowrap text-sm font-medium text-gray-900'>".$tanggal_lembur = $user_data['tanggal_lembur']."</td>";

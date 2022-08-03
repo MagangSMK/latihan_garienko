@@ -10,13 +10,13 @@ include_once("../../config/config.php");
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-	<form action="add.php" method="post" name="form2">
-		<div class="bg-green-200 py-10 px-10 min-h-screen ">
+	<form action="add.php" method="post" name="form">
+		<div class="bg-purple-400 py-10 px-10 min-h-screen ">
 			<!--   tip; mx-auto -- jagab ilusti keskele  -->
-			<div class="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">
-				
+			<div class="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">	
 				<!--       flex - asjad korvuti, nb! flex-1 - element kogu ylejaanud laius -->
       			<div class="flex items-center mb-5">
+					
         			<!--         tip - here neede inline-block , but why? -->
         			<label 
 						for="id" 
@@ -29,33 +29,33 @@ include_once("../../config/config.php");
 				</div>
 				<div class="flex items-center mb-10">
 					<label 
-						for="karyawan_id" 
+						for="nama_golongan" 
 						class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Nama Golongan
 					</label>
 					<input 
-						type="text"  name="karyawan_id" placeholder="...." 
+						type="text"  name="nama_golongan" placeholder="...." 
 						class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none"
 					> <!-- check other class spec upper section -->
 				</div>
 				<div class="flex items-center mb-5">
         			<!-- tip - here neede inline-block , but why? -->
         			<label 
-						for="tanggal_cuti" 
+						for="gaji_pokok" 
 						class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Gaji Pokok
 					</label>
 					<input 
-						type="text"  name="tanggal_cuti" placeholder="...." 
+						type="text"  name="gaji_pokok" placeholder="...." 
                			class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none"
 					>
       			</div>
 				<div class="flex items-center mb-5">
         			<!-- tip - here neede inline-block , but why? -->
        	 			<label 
-						for="jumlah" 
+						for="tunjangan_istri" 
 						class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Tunjangan Istri
 					</label>
 					<input 
-						type="text"  name="jumlah" placeholder="...." 
+						type="text"  name="tunjangan_istri" placeholder="...." 
                			class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400
                       	outline-none"
 					>
@@ -63,11 +63,11 @@ include_once("../../config/config.php");
 				  <div class="flex items-center mb-5">
         			<!-- tip - here neede inline-block , but why? -->
        	 			<label 
-						for="jumlah" 
+						for="tunjangan_anak" 
 						class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Tunjangan Anak
 					</label>
 					<input 
-						type="text"  name="jumlah" placeholder="...." 
+						type="text"  name="tunjangan_anak" placeholder="...." 
                			class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400
                       	outline-none"
 					>
@@ -75,11 +75,11 @@ include_once("../../config/config.php");
 				  <div class="flex items-center mb-5">
         			<!-- tip - here neede inline-block , but why? -->
        	 			<label 
-						for="jumlah" 
+						for="tunjangan_transport" 
 						class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Tunjangan Transport
 					</label>
 					<input 
-						type="text"  name="jumlah" placeholder="...." 
+						type="text"  name="tunjangan_transport" placeholder="...." 
                			class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400
                       	outline-none"
 					>
@@ -87,11 +87,11 @@ include_once("../../config/config.php");
 				  <div class="flex items-center mb-5">
         			<!-- tip - here neede inline-block , but why? -->
        	 			<label 
-						for="jumlah" 
+						for="tunjangan_makan" 
 						class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Tunjangan Makan
 					</label>
 					<input 
-						type="text"  name="jumlah" placeholder="...." 
+						type="text"  name="tunjangan_makan" placeholder="...." 
                			class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400
                       	outline-none"
 					>
@@ -110,15 +110,18 @@ include_once("../../config/config.php");
 						// Check If form submitted, insert form data into users table.
 						if(isset($_POST['Submit'])) {
 							$id = $_POST['id'];
-							$karyawan_id = $_POST['karyawan_id'];
-							$tanggal_cuti = $_POST['tanggal_cuti'];
-							$jumlah = $_POST['jumlah'];
+							$nama_golongan = $_POST['nama_golongan'];
+							$gaji_pokok = $_POST['gaji_pokok'];
+							$tunjangan_istri = $_POST['tunjangan_istri'];
+							$tunjangan_anak = $_POST['tunjangan_anak'];
+							$tunjangan_transport = $_POST['tunjangan_transport'];
+							$tunjangan_makan = $_POST['tunjangan_makan'];
 							// include database connection file
 							include_once("../../config/config.php");			
 							// Insert user data into table
-							$result1 = mysqli_query($mysqli, "INSERT INTO cuti(id,karyawan_id,tanggal_cuti,jumlah) VALUES('$id','$karyawan_id','$tanggal_cuti','$jumlah')");
+							$result2 = mysqli_query($mysqli, "INSERT INTO golongan(id,nama_golongan,gaji_pokok,tunjangan_istri,tunjangan_anak,tunjangan_transport,tunjangan_makan) VALUES('$id','$nama_golongan','$gaji_pokok','$tunjangan_istri','$tunjangan_anak','$tunjangan_transport','$tunjangan_makan')");
 							// Show message when user added
-							echo "data added successfully. <a href='../../login/homepage.php' >View Users</a>";
+							echo "data added successfully. <a href='../../login/homepage.php' class='text-blue-600' >View Users</a>";
 						}
 					?>
 				</div>

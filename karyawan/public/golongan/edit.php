@@ -45,49 +45,169 @@ while($user_data = mysqli_fetch_array($result2))
 }
 ?>
 <html>
-<head>	
-	<title>Edit Data Golongan</title>
-</head>
- 
-<body>
-	<a href="../../login/homepage.php">Home</a>
-	<br/><br/>
-	
-	<form name="update_data" method="post" action="edit.php">
-		<table border="0">
-			<tr> 
-				<td>Id</td>
-				<td><input type="text" name="id" disabled value=<?php echo $id;?>></td>
-			</tr>
-			<tr> 
-				<td>Nama Golongan</td>
-				<td><input type="text" name="nama_golongan" value=<?php echo $nama_golongan;?>></td>
-			</tr>
-			<tr> 
-				<td>Gaji Pokok</td>
-				<td><input type="text" name="gaji_pokok" value=<?php echo $gaji_pokok;?>></td>
-			</tr>
-			<tr> 
-				<td>Tunjangan Istri</td>
-				<td><input type="text" name="tunjangan_istri" value=<?php echo $tunjangan_istri;?>></td>
-			</tr>
-            <tr> 
-				<td>Tunjangan Anak</td>
-				<td><input type="text" name="tunjangan_anak" value=<?php echo $tunjangan_anak;?>></td>
-			</tr>
-            <tr> 
-				<td>Tunjangan Transport</td>
-				<td><input type="text" name="tunjangan_transport" value=<?php echo $tunjangan_transport;?>></td>
-			</tr>
-            <tr> 
-				<td>Tunjangan Makan</td>
-				<td><input type="text" name="tunjangan_makan" value=<?php echo $tunjangan_makan;?>></td>
-			</tr>
-			<tr>
-				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-				<td><input type="submit" name="update" value="Update"></td>
-			</tr>
-		</table>
-	</form>
-</body>
+	<head>	
+		<title>Edit User Data</title>
+		<link rel="stylesheet" href="../css/style.css">
+	</head>
+
+	<body>
+		<form name="update" method="post" action="edit.php">
+		
+			<div class="bg-purple-400 py-10 px-10 min-h-screen ">
+		
+  				<!--   tip; mx-auto -- jagab ilusti keskele  -->
+  				<div class="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">
+
+      				<!--       flex - asjad korvuti, nb! flex-1 - element kogu ylejaanud laius -->
+      				
+					<div class="flex items-center mb-5">
+
+        				<!--         tip - here neede inline-block , but why? -->
+        				<label 
+							for="id" 
+							class="inline-block w-20 mr-6 text-right font-bold 
+							text-gray-600">Id 
+						</label>
+        				<input 
+							type="text"  
+							disabled name="id" 
+							placeholder="" 
+               				class="flex-1 py-2 border-b-2 
+							border-gray-400 focus:border-green-400 
+                      		text-gray-600 placeholder-gray-400	outline-none"  
+							value=<?php echo $id;?>
+						>
+      				</div>
+
+      				<div class="flex items-center mb-10">
+        				<label 
+							for="nama_golongan" 
+							class="inline-block w-20 mr-6 text-right font-bold 
+							text-gray-600">Nama Golongan 
+						</label>
+        				<input type="text"  
+							name="nama" 
+							placeholder="" 
+        					class="flex-1 py-2 border-b-2 
+							border-gray-400 focus:border-green-400 
+                      		text-gray-600 placeholder-gray-400 outline-none" 
+							value=<?php echo $nama_golongan;?>
+						> <!-- check other class spec upper section -->
+      				</div>
+
+      				<div class="flex items-center mb-5">
+						<!--         tip - here neede inline-block , but why? -->
+        				<label for="gaji_pokok" 
+							class="inline-block w-20 mr-6 text-right font-bold 
+							text-gray-600">Gaji Pokok 
+						</label>
+        				<input 
+							type="text"  
+							name="tlp" 
+							placeholder="" 
+               				class="flex-1 py-2 border-b-2 
+							border-gray-400 focus:border-green-400 
+                      		text-gray-600 placeholder-gray-400 outline-none" 
+							value=<?php echo $gaji_pokok;?>
+						>
+      				</div>
+
+      				<div class="flex items-center mb-5">
+        				<!--         tip - here neede inline-block , but why? -->
+        				<label 
+							for="tunjangan_istri" 
+							class="inline-block w-20 mr-6 text-right font-bold 
+							text-gray-600">Tunjangan Istri 
+						</label>
+        				<input type="text"  name="alamat" placeholder="" 
+               				class="flex-1 py-2 border-b-2 
+							border-gray-400 focus:border-green-400 
+                      		text-gray-600 placeholder-gray-400 outline-none"
+							value=<?php echo $tunjangan_istri;?>
+						>
+      				</div>
+
+      				<div class="flex items-center mb-5">
+       	 				<!--         tip - here neede inline-block , but why? -->
+        				<label 
+							for="tunjangan_anak" 
+							class="inline-block w-20 mr-6 text-right font-bold 
+							text-gray-600">Tunjangan Anak 
+						</label>
+        				<input 
+							type="text"  
+							name="username" 
+							placeholder="" 
+               				class="flex-1 py-2 border-b-2 
+							border-gray-400 focus:border-green-400 
+                     		text-gray-600 placeholder-gray-400 outline-none" 
+					  		value=<?php echo $tunjangan_anak;?>
+						>
+      				</div>
+
+      				<div class="flex items-center mb-5">
+        				<!--         tip - here neede inline-block , but why? -->
+        				<label 
+							for="tunjangan_transport" 
+							class="inline-block w-20 mr-6 text-right font-bold 
+							text-gray-600">Tunjangan Transport
+						</label>
+        				<input 
+							type="text"  
+							name="password" 
+							placeholder="" 
+               				class="flex-1 py-2 border-b-2 
+							border-gray-400 focus:border-green-400 
+                      		text-gray-600 placeholder-gray-400 outline-none" 
+					  		value=<?php echo $tunjangan_transport;?>
+						>
+      				</div>
+
+      				<div class="flex items-center mb-5">
+        				<!--         tip - here neede inline-block , but why? -->
+        				<label 
+							for="tunjangan_makan" 
+							class="inline-block w-20 mr-6 text-right font-bold 
+							text-gray-600">Tunjangan Makan 
+						</label>
+        				<input 
+							type="text"  
+							name="akses" 
+							placeholder="" 
+               				class="flex-1 py-2 border-b-2 
+							border-gray-400 focus:border-green-400 
+                      		text-gray-600 placeholder-gray-400
+                      		outline-none" 
+					  		value=<?php echo $tunjangan_makan;?>
+						>
+      				</div>
+
+      				<div class="text-right">
+	  					<input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+						<a
+            				href="../../login/homepage.php"
+           					type="submit"
+            				class="inline-block px-3 py-3 
+							bg-black 
+							text-white uppercase rounded shadow-md 
+							hover:bg-black hover:shadow-lg 
+							focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 
+							active:bg-black active:shadow-lg"
+            				data-mdb-ripple="true"
+            				data-mdb-ripple-color="light">
+            				Go to homepage
+          				</a>
+		  				<input 
+							name="update" 
+							type="submit" 
+							class="py-3 px-2 
+							bg-blue-400 hover:bg-blue-700 
+							text-white font-bold" 
+							value="update"
+						>
+	  				</div>
+  				</div>
+			</div>
+		</form>
+	</body>
 </html>
